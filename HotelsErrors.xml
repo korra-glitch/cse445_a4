@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- (1) Root element is "Hotel" instead of "Hotels" -->
+<!-- 1. Root element is "Hotel" instead of "Hotels" -->
 <Hotel>
   <Hotel>
     <Name>Westin</Name>
@@ -18,7 +18,8 @@
   <Hotel>
     <Name>Marriott</Name>
     <Phone>602-345-6789</Phone>
-    <!-- (2) Missing the required attribute "NearstAirport" -->
+
+    <!-- 2. Missing the required attribute "NearstAirport" -->
     <Address>
       <Number>100</Number>
       <Street>N Central Ave</Street>
@@ -30,7 +31,8 @@
 
   <Hotel>
     <Name>Hilton</Name>
-    <!-- (3) Missing the <Phone> element entirely -->
+
+    <!-- 3. Missing the <Phone> element entirely -->
     <Address NearstAirport="Phoenix-Mesa Gateway">
       <Number>200</Number>
       <Street>W Rio Salado Pkwy</Street>
@@ -50,7 +52,8 @@
       <City>Scottsdale</City>
       <State>AZ</State>
       <Zip>85250</Zip>
-      <!-- (4) Missing closing </Address> tag -->
+
+      <!-- 4. Missing closing </Address> tag -->
     <Rating>4.5</Rating>
   </Hotel>
 

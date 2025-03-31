@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <!-- Define root element Hotels -->
+  <xs:element name="Hotels">
+    <xs:complexType>
+      <xs:sequence>
 
-    <xs:element name="Hotels">
-        <xs:complexType>
+        <!-- this allows multiple Hotel entries -->
+        <xs:element name="Hotel" maxOccurs="unbounded">
+          <xs:complexType>
             <xs:sequence>
 
-                <xs:element name="Hotel" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Name" type="xs:string" />
-                            <xs:element name="Phone" type="xs:string" maxOccurs="unbounded" />
-                            <xs:element name="Address">
-                                <xs:complexType>
-                                    <xs:sequence>
+              <!-- this is the hotel name as a string -->
+              <xs:element name="Name" type="xs:string" />
 
-                                        <xs:element name="Number" type="xs:int" />
-                                        <xs:element name="Street" type="xs:string" />
-                                        <xs:element name="City" type="xs:string" />
-                                        <xs:element name="State" type="xs:string" />
-                                        <xs:element name="Zip" type="xs:int" />
-                                    </xs:sequence>
-                                    <xs:attribute name="NearstAirport" type="xs:string" use="required"/>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="Rating" type="xs:decimal" use="optional" />
+              <!-- this is the multiple phone numbers allowed -->
+              <xs:element name="Phone" type="xs:string" maxOccurs="unbounded" />
 
-                    </xs:complexType>
-                </xs:element>
+              <!-- this is the container for address details -->
+              <xs:element name="Address">
+                <xs:complexType>
+                  <xs:sequence>
+
+                    <!-- this is the numeric hotel number provided -->
+                    <xs:element name="Number" type="xs:int" />
+
+                    <!-- this is the street information here -->
+                    <xs:element name="Street" type="xs:string" />
+
+                    <!-- this is the city for location details -->
+                    <xs:element name="City" type="xs:string" />
+
+                    <!-- this is the state abbreviation required -->
+                    <xs:element name="State" type="xs:string" />
+
+                    <!-- this is the integer zip code value -->
+                    <xs:element name="Zip" type="xs:int" />
+                  </xs:sequence>
+
+                  <!-- this is required nearest airport attribute -->
+                  <xs:attribute name="NearstAirport" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+
+            <!-- this is (optional) rating numeric attribute -->
+            <xs:attribute name="Rating" type="xs:decimal" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
